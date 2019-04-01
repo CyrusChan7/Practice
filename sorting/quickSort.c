@@ -78,6 +78,17 @@ pivot, move it to the left. Else if it is greater, then move it to the right
 -O(nlogn) is the average case and best case
 	-Worst case is O(n^2)
 
+	-Rationale:
+		-Each partitioning operation takes O(n) operations because of the for loop. On average,
+		there are logn partitioning operations. Therefore O(nlogn)
+
+-Why use Quick Sort over Merge Sort if Merge Sort's worse case is always going to be O(nlogn)? 
+	This is because QS is cheap to use because the sorting is in-place and does not require the
+	creation of new array(s)
+
+-How to overcome Quick Sort's worse case of O(n^2) on an already sorted array? 
+	Randomize the pivot as opposed to selecting a specified element based on index position
+
 -Almost all programming languages STL use quick sort for sorting
 
 */

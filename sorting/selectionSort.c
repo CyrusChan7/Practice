@@ -7,7 +7,7 @@ void selection_sort(int arr[], int len);
 
 int main(int argc, char const *argv[]){
 	
-	int unsortedArray[7] = {1,9,4,6,5,2,3};
+	int unsortedArray[7] = {1,9,4,3,5,2,3};
 	printf("Array before sorting it:");
 	for (int i = 0; i < 7; i++){
 		printf(" %d", unsortedArray[i]);
@@ -22,6 +22,11 @@ int main(int argc, char const *argv[]){
 	}
 	printf("\n");
 
+	// testing assertions
+	for (int k = 1; k < 7; k++){
+		assert(unsortedArray[k-1] <= unsortedArray[k]);
+	}
+	printf("All assertions passed, program is exiting gracefully.\n");
 
 	return 0;
 }

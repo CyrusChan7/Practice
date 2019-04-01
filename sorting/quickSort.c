@@ -78,9 +78,14 @@ pivot, move it to the left. Else if it is greater, then move it to the right
 -O(nlogn) is the average case and best case
 	-Worst case is O(n^2)
 
-	-Rationale:
+	-Rationale (for average and best case):
 		-Each partitioning operation takes O(n) operations because of the for loop. On average,
 		there are logn partitioning operations. Therefore O(nlogn)
+
+	-Rationale (for worst case):
+		-Assuming that the sort picks the worse pivot everytime, the code will only have one group
+		to sort. Therefore, this creates n groups that need to be iterated through n times. Resulting
+		in O(n^2)
 
 -Why use Quick Sort over Merge Sort if Merge Sort's worse case is always going to be O(nlogn)? 
 	This is because QS is cheap to use because the sorting is in-place and does not require the

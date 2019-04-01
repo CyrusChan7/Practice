@@ -42,10 +42,24 @@ void quick_sort(int arr[], int first, int last){
 
 int partition(int arr[], int first, int last){
 	int pivot = arr[last];
-	int length = (first + last + 1);
-	int mid = length / 2;
-	printf("mid is %d, returning %d\n", mid, mid);
-	return mid;
+
+	int smallIndex = 0;
+	for (int i = 0; i < last; i++){
+		if (arr[i] <= pivot){
+			// pseudo insertion-sort, swaps all elements smaller than pivot to the left
+			int temp = arr[i];
+			arr[i] = arr[smallIndex];
+			arr[smallIndex] = temp;
+			smallIndex++;
+		}
+	}
+	// swapping pivot so it ends up in the center
+	int temp2 = arr[smallIndex];
+	arr[smallIndex] = arr[last];
+	arr[last] = temp2;
+
+	// printf("smallIndex is %d, returning it\n", smallIndex);
+	return smallIndex;
 }
 
 /* Info about quick sort:
@@ -54,5 +68,11 @@ int partition(int arr[], int first, int last){
 pivot, move it to the left. Else if it is greater, then move it to the right
 	-Keep recursively doing this until the bottom is reached
 	-Aka a Divide and Conquer sort
+	-The sort is in-place in nature
+
+-O(nlogn) is the average case and best case
+	-Worst case is O(n^2)
+
+-Almost all programming languages STL use quick sort for sorting
 
 */

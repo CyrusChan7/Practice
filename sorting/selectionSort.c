@@ -4,7 +4,6 @@
 
 // function prototyping
 void selection_sort(int arr[], int len);
-void swap(int * index1, int * index2);
 
 int main(int argc, char const *argv[]){
 	
@@ -28,24 +27,25 @@ int main(int argc, char const *argv[]){
 }
 
 void selection_sort(int arr[], int len){
-	int min = arr[0];
-	unsigned int indexCounter = 0;
+
+	int minNumber = arr[0];
+	unsigned int indexOfMin = 0;
+
 	for (int i = 0; i < len; i++){
-		min = arr[i];
+
+		minNumber = arr[i];
+		indexOfMin = i;
+
 		for (int j = i; j < len; j++){
-			if (arr[j] < min){
-				min = arr[j];
-				indexCounter = i;
+			if (arr[j] < minNumber){
+				minNumber = arr[j];
+				indexOfMin = j;
 			}
 		}
-		/* swapping algorithm 
-		temp = a;
-		a = b;
-		b = temp;
-		*/
-		int temp = arr[j];
-		arr[j] = arr[indexCounter];
-		arr[indexCounter] = temp;
+
+		int temp = arr[i];				// temp = a;
+		arr[i] = arr[indexOfMin];		// a = b;
+		arr[indexOfMin] = temp;			// b = temp;
 	}
 
 
@@ -55,6 +55,8 @@ void selection_sort(int arr[], int len){
 
 -The array is divided into sorted (on the left) and unsorted (on the right)
 
-Big-O notation is O(n^2)
+-Big-O notation is O(n^2) due to the nature of the nested for loops
+	-The comparisons are O(1) constant time
+	-The swappings are also O(1) constant time
 
 */

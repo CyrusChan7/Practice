@@ -43,20 +43,21 @@ void selection_sort(int arr[], int len){
 			}
 		}
 
-		int temp = arr[i];				// temp = a;
+		int tempNum = arr[i];			// temp = a;
 		arr[i] = arr[indexOfMin];		// a = b;
-		arr[indexOfMin] = temp;			// b = temp;
+		arr[indexOfMin] = tempNum;		// b = temp;
 	}
-
 
 }
 
-/* Info about the sort:
+/* Info about selection sort:
 
 -The array is divided into sorted (on the left) and unsorted (on the right)
 
 -Big-O notation is O(n^2) due to the nature of the nested for loops
 	-The comparisons are O(1) constant time
 	-The swappings are also O(1) constant time
+
+	-There are no average cases or worse cases, it will always be O(n^2)
 
 */

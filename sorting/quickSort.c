@@ -23,6 +23,11 @@ int main(){
 	}
 	printf("\n");
 
+	for (int k = 1; k < 7; k++){
+		assert(unsortedArray[k-1] <= unsortedArray[k]);
+	}
+	printf("All assertions passed successfully, exiting program\n");
+
 	return 0;
 }
 

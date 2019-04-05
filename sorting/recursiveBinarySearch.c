@@ -62,3 +62,24 @@ int main(){
 
 	return 0;
 }
+
+/* Info about Binary Search:
+
+-Array must be sorted beforehand (disadvantage of BS compared to Linear Sort)
+	-Keeping array sorted can be expensive
+
+-Two ways of implementing Binary Search, iteratively or recursively, the latter is preferred
+-Best search for an unordered array is Linear Search O(n)
+
+-General paradigm:
+	-Divide the array into half the size every time, until the item is found (or not)
+		-If item found, return the index or 1, if fail return -1
+	-Which half to keep depends on the middle element's value and target's value, whether it is greater or lesser
+		-Middle element is at index (first+last) / 2 or len / 2
+
+-After k iterations, roughly n/ 2^k candidates remain
+-When 2^k >= n, candidates run out or when k >= log(2 subscript) n
+
+-Binary Search runs in O(logn) because half of all elements are thrown out every recursive call
+
+*/

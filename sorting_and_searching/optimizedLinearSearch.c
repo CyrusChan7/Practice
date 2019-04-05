@@ -10,10 +10,10 @@ int optimized_linear_search(int arr[], int len, int target){
 	}
 
 	if (i != len){					// 1. Total comparisons become n + 2
-		return i;
+		return i;	// returning the index	
 	}
 	else {
-		return -1;
+		return -1;  // -1 signifies not found
 	}
 
 }
